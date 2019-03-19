@@ -16,11 +16,11 @@ ORM_LOGGING         # boolean para definir o logging
 
 ## Executando
 Suba um banco qualquer num SQL-Server e passe as configurações dele nas variáveis de ambiente acima.  
-Opcionalmente, você pode usar o banco em Docker pré configurado que está no script do package.json do projeto.
+Opcionalmente, você pode usar o banco em Docker pré configurado que está no script do package.json do projeto. ( Necessário ter o Docker instalado )
 ```
 npm run mssql:test
 ```
-ao usar esse script, não é necessário passar nenhuma das configurações de ambiente acima.
+Ao usar esse script, não é necessário passar nenhuma das configurações de ambiente acima.
 
 Após configurar o banco, é só startar:
 ```
