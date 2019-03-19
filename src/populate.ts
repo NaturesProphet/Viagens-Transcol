@@ -5,16 +5,16 @@ import { get } from './restClient'
 
 const options: ConnectionOptions = {
     type: "mssql",
-    host: String( process.env.DB_HOST ) || "localhost",
+    host: process.env.DB_HOST || "localhost",
     port: Number( process.env.DB_PORT ) || 1433,
-    username: String( process.env.DB_USER ) || "SA",
-    password: String( process.env.DB_PASSWORD ) || "!SenhaDificil%",
-    database: String( process.env.DB_SCHEMA ) || "tempdb",
+    username: process.env.DB_USER || "SA",
+    password: process.env.DB_PASSWORD || "!SenhaDificil%",
+    database: process.env.DB_SCHEMA || "tempdb",
     entities: [
         Viagem
     ],
-    synchronize: Boolean( process.env.ORM_SYNC ) || true,
-    logging: Boolean( process.env.ORM_LOGGING ) || false
+    synchronize: true,
+    logging: false
 };
 let erros: number = 0;
 let sucesso: number = 0;
@@ -27,6 +27,7 @@ export async function populate () {
         console.log( `Conectado ao banco!` );
     } catch ( err ) {
         console.log( err.message );
+        process.exit( 1 );
     }
     let viagens: any[];
     try {

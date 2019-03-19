@@ -10,8 +10,6 @@ DB_PORT             # porta do banco
 DB_USER             # usuario do banco
 DB_PASSWORD         # senha do banco
 DB_SCHEMA           # nome do banco
-ORM_SYNC            # boolean para gerar automaticamente a tabela
-ORM_LOGGING         # boolean para definir o logging
 ```
 
 ## Executando
